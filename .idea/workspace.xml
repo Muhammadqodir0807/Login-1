@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6205a2ff-d83e-4763-b22d-3296d67f1077" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1sR3u8S9fMOlw9ZrlkknxdrJkRx" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\react-works\src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6205a2ff-d83e-4763-b22d-3296d67f1077" name="Default Changelist" comment="" />
+      <created>1620821794075</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620821794075</updated>
+      <workItem from="1620821795309" duration="445000" />
+      <workItem from="1620822690221" duration="633000" />
+      <workItem from="1620834712967" duration="17000" />
+      <workItem from="1621328304482" duration="24000" />
+      <workItem from="1621328364588" duration="1396000" />
+      <workItem from="1621329996775" duration="150000" />
+      <workItem from="1621330245608" duration="647000" />
+      <workItem from="1621341290793" duration="151000" />
+      <workItem from="1621348862058" duration="14000" />
+      <workItem from="1621519084221" duration="65000" />
+      <workItem from="1621520389409" duration="2723000" />
+      <workItem from="1621534995400" duration="126000" />
+      <workItem from="1621693703955" duration="1453000" />
+      <workItem from="1621850447192" duration="32000" />
+      <workItem from="1621941603283" duration="19000" />
+      <workItem from="1622195063016" duration="1901000" />
+      <workItem from="1622197090938" duration="355000" />
+      <workItem from="1622197515296" duration="2611000" />
+      <workItem from="1624694771328" duration="2115000" />
+      <workItem from="1624945856903" duration="52000" />
+      <workItem from="1625138614444" duration="82000" />
+      <workItem from="1625303908027" duration="592000" />
+      <workItem from="1625320716161" duration="197000" />
+      <workItem from="1625569802117" duration="1260000" />
+      <workItem from="1625586108292" duration="91000" />
+      <workItem from="1627457253440" duration="1340000" />
+      <workItem from="1629966088301" duration="970000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
