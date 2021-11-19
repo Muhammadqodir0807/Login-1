@@ -1,5 +1,5 @@
 import React from 'react';
-import AdminLayout from "../components/AdminLayout";
+import AdminLayout from "../Components/AdminLayout";
 import {updateState,saveMenu} from "../redux/action/menusAction";
 import {connect} from "react-redux";
 import {Modal, ModalBody, ModalHeader, ModalFooter} from "reactstrap";
@@ -20,7 +20,6 @@ const AdminMenus = (props) => {
                         <AvField name="nameUz" type="text" onChange={(e) => props.updateState({url: generateUrl(e.target.value)})} label="Name (uz)"/>
                         <AvField name="nameUz" type="text" label="Name (ru)"/>
                         <AvField name="nameUz" type="text" label="Name (en)"/>
-
 
                         <AvField name="url" type="text" label="Url" value={props.url}/>
 

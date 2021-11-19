@@ -1,6 +1,7 @@
 import axios from "axios";
 import {API_PATH, TOKEN_NAME} from "../../tools/constans";
 import {toast} from "react-toastify";
+import {updateState} from "./menusAction";
 
 export function login(event, errors, values, history) {
     return function (dispatch) {
@@ -11,15 +12,27 @@ export function login(event, errors, values, history) {
                 dispatch({type: ""});
                 history.push("/admin/menus");
 
-
             })
             .catch((error) => {
                 // console.log("XATOLIK")
                 toast.error("Xatolik");
             });
-
     }
+}
 
+// export const getModal = () => (dispatch) => {
+//     axios.get(API_PATH + "api/ModalProductInfo/")
+//         .then((res) => {
+//             dispatch(updateState({subModals: res.data}))
+//         })
+// }
+
+
+export const getProducts = () => (dispatch) => {
+    axios.get(API_PATH + "api/ProductsColorByProductId/")
+        .then((res) => {
+            dispatch(updateState({subProduct: res.data}))
+        })
 }
 
 
@@ -32,13 +45,14 @@ export function enternumber(event, errors, values, history) {
                 dispatch({type: ""});
                 history.push("/admin/menus");
 
-
             })
             .catch((error) => {
-                // console.log("XATOLIK")
-                toast.error("Xatolik");
+                // console.log(error.response)
+                 toast.error("Xatolik");
             });
-
     }
-
 }
+
+
+
+
