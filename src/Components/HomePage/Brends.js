@@ -3,7 +3,8 @@ import ModalExample from "../Data";
 import axios from "axios";
 import {API_PATH} from "../../tools/constans";
 import {connect} from "react-redux";
-import {setBrand,getBrand} from "../../redux/action/brandAction";
+import {setBrand,getBrand,getBrandId} from "../../redux/action/brandAction";
+import {Link} from "react-router-dom";
 
 const Brends = (props) => {
 
@@ -28,11 +29,11 @@ const Brends = (props) => {
                 <div className="row cards">
                     {
                         props.images.map((data,index) => (
-                        <div className=' col-lg-1 col-md-2 col-sm-2 mt-4' key={index}>
+                        <Link to={"/four"} onClick={() => props.getBrandId(data.id)} className=' col-lg-1 col-md-2 col-sm-2 mt-4' key={index}>
                             <a href="#">
                             <img className="w-100" key={data.id} src={data.image} alt=""/>
                             </a>
-                        </div>
+                        </Link>
                     ))
 
                     }
@@ -50,4 +51,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps,{setBrand,getBrand})(Brends);
+export default connect(mapStateToProps,{setBrand,getBrand,getBrandId})(Brends);

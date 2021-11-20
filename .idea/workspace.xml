@@ -2,54 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6205a2ff-d83e-4763-b22d-3296d67f1077" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/CardBurger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Cards3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Main3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/MainBurger.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/AdminLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AdminLayout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Back.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Back.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Cards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Cards2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Cards2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/DataLeft.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/DataLeft.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FooterResponse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FooterResponse.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/HomePage/Brends.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/Brends.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/HomePage/CardsMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/CardsMain.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/HomePage/Carousel-main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/Carousel-main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HomePage/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HomePage/Korzina.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/Korzina.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/HomePage/MainParts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/MainParts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Main2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/MainModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MainModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/MainRoot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MainRoot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Wildberries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Wildberries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/zoom/ZoomHower.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/zoom/ZoomHower.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AdminMenus.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminMenus.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/action/brandAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/brandAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/action/burgerAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/burgerAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/action/cardsAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/cardsAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/action/carouselAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/carouselAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/action/loginAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/loginAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/action/mainPartsAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/mainPartsAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/action/menusAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/menusAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/action/newAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/newAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reducers/brandReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/brandReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reducers/burgerReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/burgerReduser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reducers/cardsReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/cardsReduser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/carouselReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/carouselReduser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/mainPartsReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/mainPartsReduser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/menusReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/menusReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/rootReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/rootReduser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/types/menusTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types/menusTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/main-admin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/main-admin.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/constans.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/constans.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -246,7 +219,8 @@
       <workItem from="1637042594281" duration="19424000" />
       <workItem from="1637128133488" duration="17526000" />
       <workItem from="1637217742488" duration="9698000" />
-      <workItem from="1637316785619" duration="2112000" />
+      <workItem from="1637316785619" duration="5536000" />
+      <workItem from="1637383861782" duration="12621000" />
     </task>
     <servers />
   </component>
@@ -271,7 +245,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Components/Back.js</url>
-          <line>190</line>
+          <line>196</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -281,7 +255,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Components/Back.js</url>
-          <line>73</line>
+          <line>79</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

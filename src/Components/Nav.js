@@ -6,15 +6,13 @@ import ModalExample from "./Data";
 import axios from "axios";
 import {API_PATH} from "../tools/constans";
 import {connect} from "react-redux";
-import {setBurger,getBurger,handleBoxToggle} from "../redux/action/burgerAction";
+import {setBurger,getBurger,getBurgerId} from "../redux/action/burgerAction";
 
 const Navbar = (props) => {
 
-    console.log(props)
-    console.log("propsburg")
     useEffect(() => {
         props.getBurger();
-        props.handleBoxToggle();
+     props.getBurgerId();
     },[])
 
 
@@ -69,10 +67,10 @@ const Navbar = (props) => {
                                                 <div key={item.id} className='name mt-4'>
                                                     {/*{`name-tabler d-flex ${props.show? "show" : ""}`} onMouseEnter={() => props.setBurger({show: ! props.show})}*/}
                                                     <div className="name-tabler">
-                                                    <div className="name-table d-flex" >
+                                                    <Link to={"/burger"} onClick={() => props.getBurgerId(item.id)} className="name-table d-flex" >
                                                         <img className='user me-2' src={item.image} alt=""/>
                                                         <h4>{item.categoryname}</h4>
-                                                    </div>
+                                                    </Link>
 
                                                     <div className="right-part" >
                                                         <div className="inside">
@@ -144,7 +142,7 @@ const Navbar = (props) => {
                             <div className="first-qism">
                                 <a href="#">
 
-                                    <Link to={"/login"} className="ras2">
+                                    <Link to={"/enter"} className="ras2">
 
                                         <img
                                             src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/ffffff/external-user-interface-kiranshastry-solid-kiranshastry-1.png"/>
@@ -182,4 +180,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps,{setBurger,getBurger,handleBoxToggle})(Navbar);
+export default connect(mapStateToProps,{setBurger,getBurger,getBurgerId})(Navbar);

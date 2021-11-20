@@ -27,7 +27,7 @@ export const getCarouselId = (id, history) => {
         axios.get(API_PATH + "api/ShoppingDayProducts/ " + id)
             .then((res) => {
                 dispatch(inform({slideId:res.data}))
-                history.push("/twooo")
+                // history.push("/twooo")
             })
     }
 }

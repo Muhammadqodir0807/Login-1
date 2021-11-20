@@ -17,4 +17,11 @@ export const getBurger = () => (dispatch) => {
         })
 }
 
-export const   handleBoxToggle = () => setBurger({ show: !setBurger.show });
+export const getBurgerId = (id) => {
+    return function (dispatch , getState) {
+        axios.get(API_PATH + "api/ProductsByCategoryId/" + id)
+            .then((res) => {
+                dispatch(setBurger({menusId:res.data}))
+            })
+    }
+}

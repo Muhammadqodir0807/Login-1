@@ -4,11 +4,13 @@ import MainModal from "./MainModal";
 import Footer from "./Footer";
 import ModalExample from "./Data";
 import {connect} from "react-redux";
-import {setState,getCard} from "../redux/action/cardsAction";
+import {setState,getCard,getCardBack} from "../redux/action/cardsAction";
 import axios from "axios";
 import {API_PATH} from "../tools/constans";
 import {Modal, ModalBody} from "reactstrap";
 import {Link} from "react-router-dom";
+
+
 
 const Back = (props) => {
 
@@ -16,14 +18,18 @@ const Back = (props) => {
     console.log("propswer")
 
     useEffect(() => {
-        axios
-            .get(API_PATH + "/api/ProductInfo/" + `${props.props}`)
-            .then((res) => {
-                setData(res.data.data);
-                // console.log(res.data);
-            })
-            .catch((err) => console.log("Aka aylaning"));
-    }, []);
+        props.getCardBack();
+    },[])
+
+    // useEffect(() => {
+    //     axios
+    //         .get(API_PATH + "/api/ProductInfo/" + `${props.props}`)
+    //         .then((res) => {
+    //             setData(res.data.data);
+    //             // console.log(res.data);
+    //         })
+    //         .catch((err) => console.log("Aka aylaning"));
+    // }, []);
 
 
     const [data, setData] = useState([]);
@@ -72,9 +78,9 @@ const Back = (props) => {
                 <Nav/>
 
                 <div className="mt-5">
-                    <h1>{props.props}</h1>
-                    {data.map((data1) => (
-                        <div className="artikul">
+
+                    {props.back.map((data1,index) => (
+                        <div className="artikul" key={index}>
                             <div>
                                 {/*<div className="btn-close" onClick={toggle}></div>*/}
                                 <h1 key={data1.id}>{data1.productname}</h1>
@@ -229,6 +235,13 @@ const Back = (props) => {
 
 };
 
+const mapStateToProps = (state) => {
+    return{
+        back:state.cardsR.back,
+    }
+};
 
 
-export default Back;
+
+
+export default connect(mapStateToProps,{setState,getCardBack})(Back);

@@ -9,8 +9,8 @@ import {API_PATH} from "../tools/constans";
 
 const Cards2 = (props) => {
 
-    console.log(props)
-    console.log("propsiiii")
+    // console.log(props)
+    // console.log("propsiiii")
     useEffect(() => {
         props.getCarousel();
         props.getCarouselId();
@@ -21,9 +21,8 @@ const Cards2 = (props) => {
         <div
             className="row cards mt-5">
 
-            fjndxnjvkf
-            {console.log(props.slideId)}
-            {console.log("props.partscard")}
+            {/*{console.log(props)}*/}
+            {/*{console.log("props.partscard")}*/}
 
             {/*{*/}
             {/*    props.slideId.map((data) => {*/}
@@ -32,7 +31,7 @@ const Cards2 = (props) => {
             {/*    })*/}
             {/*}*/}
 
-            {props.slideId.map((data, index) => (
+            {props.slideId.data.map((data, index) => (
                 <div className="text-decoration-none twocards col-lg-3 col-md-3 col-sm-6 col-xs-6 mb-5 ">
                     <div  className='kategoriya'>
 

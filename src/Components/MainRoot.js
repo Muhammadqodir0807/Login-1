@@ -15,6 +15,8 @@ import Korzina from "./HomePage/Korzina";
 import Cards from "./Cards";
 import Main2 from "./Main2";
 import Cards2 from "./Cards2";
+import Main3 from "./Main3";
+import MainBurger from "./MainBurger";
 
 class MainRoot extends Component {
 
@@ -27,6 +29,8 @@ class MainRoot extends Component {
                         <Route path="/" exact component={Home} />
                         <Route path="/two" exact component={Wildberries} />
                         <Route path="/twooo" exact component={Main2}/>
+                        <Route path="/four" exact component={Main3}/>
+                        <Route path="/burger" exact component={MainBurger}/>
                         <Route path="/three" exact component={Back} />
                         <Route path={"/cards/:id"} exact component={Cards}/>
                         <Route path={"/cards2/:id2"} exact component={Cards2}/>
