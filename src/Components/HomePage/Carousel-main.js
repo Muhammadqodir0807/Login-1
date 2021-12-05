@@ -9,12 +9,14 @@ import Slider from "react-slick";
 import axios from "axios";
 import {API_PATH} from "../../tools/constans";
 import {connect} from "react-redux";
-import {inform,getCarousel,getCarouselId} from "../../redux/action/mainPartsAction";
+import {slides,getCarousel,getCarouselId} from "../../redux/action/carouselAction";
+// import {inform,getCarousel,getCarouselId} from "../../redux/action/mainPartsAction";
 
 const CarouselMain = (props) => {
 
     useEffect(() => {
         props.getCarousel();
+        props.getCarouselId();
     },[])
 
     // const [data, setData] = useState([])
@@ -23,9 +25,9 @@ const CarouselMain = (props) => {
     //     .then(res => setData(res.data))
 
    const renderSlides = props.slide.map( (data, index) => (
-        <Link to={"/twooo"} key={index}>
+        <div key={index}>
             <img src={data.image} onClick={() => props.getCarouselId(data.id, props.history)} alt=""/>
-        </Link>
+        </div>
     ))
 
     return (
@@ -49,10 +51,12 @@ const CarouselMain = (props) => {
 
 const mapStateToProps = (state) => {
     return{
-        slide:state.partM.slide,
+        slide:state.carousel.slide,
+        slideId:state.carousel.slideId
+
     }
 }
 
-export default connect(mapStateToProps,{inform,getCarousel,getCarouselId})(CarouselMain);
+export default connect(mapStateToProps,{slides,getCarousel,getCarouselId})(CarouselMain);
 
 

@@ -12,31 +12,27 @@ const Brends = (props) => {
         props.getBrand();
     },[])
 
-    // const [data , setData ] = useState([])
-    //
-    // axios.get(API_PATH + "api/Brand/")
-    //     // .then(res => console.log(res))
-    //     .then(res => setData(res.data))
-    //     .catch(err => console.log("Seryozni? , rostan"))
         return (
             <div>
 
                 <div className="d-flex">
                 <h1>Популярные бренды</h1>
-               <a className='ms-4 mt-4 text-danger' href="#">Смотреть все</a>
+               {/*<a className='ms-4 mt-4 text-danger' href="#">Смотреть все</a>*/}
 
                 </div>
-                <div className="row cards">
+                <div className="row brands cards">
+
                     {
                         props.images.map((data,index) => (
-                        <Link to={"/four"} onClick={() => props.getBrandId(data.id)} className=' col-lg-1 col-md-2 col-sm-2 mt-4' key={index}>
-                            <a href="#">
-                            <img className="w-100" key={data.id} src={data.image} alt=""/>
-                            </a>
-                        </Link>
-                    ))
+                            // col-lg-1 col-md-1 col-sm-2
+                        <div onClick={() => props.getBrandId(data.id,props.history)} className='brand col-lg-1 col-md-1 col-sm-2 mt-4' key={index}>
 
+                            <img className="w-100" key={data.id} src={data.image} alt=""/>
+
+                        </div>
+                    ))
                     }
+
                 </div>
 
             </div>

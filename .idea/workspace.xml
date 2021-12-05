@@ -2,27 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6205a2ff-d83e-4763-b22d-3296d67f1077" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/CardBurger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Cards3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Main3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/MainBurger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/FilterCards.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Filters.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/MainFilter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Verify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/AdminMenus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/dash.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/register.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Back.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Back.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/CardBurger.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CardBurger.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Cards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Cards2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Cards2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Cards3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Cards3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/FooterResponse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FooterResponse.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/HomePage/Brends.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/Brends.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/HomePage/CardsMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/CardsMain.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/HomePage/Carousel-main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/Carousel-main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/HomePage/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/HomePage/Korzina.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/Korzina.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/HomePage/MainParts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/HomePage/MainParts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Main2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Main3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/MainBurger.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MainBurger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/MainModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MainModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/MainRoot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/MainRoot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/zoom/ZoomHower.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdminMenus.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EnterNumber.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/EnterNumber.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/action/brandAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/brandAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/action/burgerAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/burgerAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/action/cardsAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/cardsAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/carouselAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/carouselAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/loginAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/loginAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/action/mainPartsAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/mainPartsAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/brandReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/brandReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reducers/burgerReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/burgerReduser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reducers/cardsReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/cardsReduser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/loginReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/loginReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/mainPartsReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/mainPartsReduser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducers/rootReduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/rootReduser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sass/main-admin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/main-admin.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/constans.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/constans.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +65,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="SCSS File" />
         <option value="JavaScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -47,7 +78,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lesson14" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -72,6 +103,7 @@
       <recent name="D:\projects\react-works\src\pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\react-works\src\pages\dashboard" />
       <recent name="D:\projects\react-works\src\sass" />
       <recent name="D:\projects\react-works\src\Components\zoom" />
       <recent name="D:\projects\react-works\public\images" />
@@ -220,7 +252,24 @@
       <workItem from="1637128133488" duration="17526000" />
       <workItem from="1637217742488" duration="9698000" />
       <workItem from="1637316785619" duration="5536000" />
-      <workItem from="1637383861782" duration="12621000" />
+      <workItem from="1637383861782" duration="18409000" />
+      <workItem from="1637470019716" duration="15439000" />
+      <workItem from="1637559774432" duration="16942000" />
+      <workItem from="1637648610092" duration="11490000" />
+      <workItem from="1637734471133" duration="16476000" />
+      <workItem from="1637820433131" duration="15065000" />
+      <workItem from="1637998404903" duration="13673000" />
+      <workItem from="1638078725879" duration="24128000" />
+      <workItem from="1638167228133" duration="13711000" />
+      <workItem from="1638254459796" duration="1936000" />
+      <workItem from="1638294147078" duration="939000" />
+      <workItem from="1638352637976" duration="2433000" />
+      <workItem from="1638361715043" duration="157000" />
+      <workItem from="1638430015509" duration="4379000" />
+      <workItem from="1638453307455" duration="4832000" />
+      <workItem from="1638526231505" duration="4819000" />
+      <workItem from="1638606541112" duration="11930000" />
+      <workItem from="1638683185996" duration="24853000" />
     </task>
     <servers />
   </component>
@@ -245,7 +294,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Components/Back.js</url>
-          <line>196</line>
+          <line>307</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -255,8 +304,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Components/Back.js</url>
-          <line>79</line>
+          <line>123</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/Components/Data.js</url>
+          <line>9</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/Components/Cards.js</url>
+          <line>18</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

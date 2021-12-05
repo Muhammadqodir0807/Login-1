@@ -20,10 +20,11 @@ export const getBrand = () => (dispatch) => {
 
 
 export const getBrandId = (id, history) => {
-    return function (dispatch,GetState) {
+    return function (dispatch,getState) {
         axios.get(API_PATH + "api/ProductsByBrandId/" + id)
             .then((res) => {
-                dispatch(setBrand({imageId:res.data.data}))
+                dispatch(setBrand({imageId:res.data.data}));
+                history.push("/four");
             })
     }
 }

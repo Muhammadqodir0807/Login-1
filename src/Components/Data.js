@@ -1,10 +1,11 @@
 
-
 import React, { useEffect, useState } from "react";
 import { Button, Modal, ModalBody } from "reactstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { API_PATH } from "../tools/constans";
+import { v4 as uuidv4 } from "uuid";
+import {toast} from "react-toastify";
 
 const ModalExample = (props) => {
     const { buttonLabel = "Быстрый просмотр", className } = props;
@@ -24,20 +25,28 @@ const ModalExample = (props) => {
     const [color, setColor] = useState("");
     const [img, setImg] = useState(data);
     const [size, setSize] = useState();
+    const [changing, setChanging] = useState(false);
 
     const [modal, setModal] = useState(false);
-    const toggle = () => setModal(!modal);
+    const toggle = () => {
+        setModal(!modal);
+        setChanging(false);
+    };
 
     const onChange = (e, color) => {
-        setColor(e.target.value);
+        setColor(color.color);
         setCurrentColor(color);
+
     };
+
+
 
     const onMouseEnter = (e, imgage) => {
         setImg(imgage);
     };
 
     const addSize = (e, ordersize, id) => {
+        e.preventDefault()
         setSize({ ...size, id, ordersize });
     };
 
@@ -48,15 +57,23 @@ const ModalExample = (props) => {
         if (localStorage.getItem("basket")) {
             let obj = JSON.parse(localStorage.getItem("basket"));
             data1.size = size;
-            data1.currentColor = currentColor.colorname;
+            data1.uniqueid = uuidv4();
+            data1.currentColor = currentColor;
+            data1.currentPrice = currentColor.price
+            data1.currentOldprice = currentColor.oldprice
+
             obj.push(data1);
             localStorage.setItem("basket", JSON.stringify(obj));
         } else {
             data1.size = size;
-            data1.currentColor = currentColor.colorname;
+            data1.uniqueid = uuidv4();
+            data1.currentColor = currentColor;
+            data1.currentPrice = currentColor.price
+            data1.currentOldprice = currentColor.oldprice
             localStorage.setItem("basket", JSON.stringify([data1]));
         }
 
+        setChanging(!changing);
         //size
         // if (localStorage.getItem("size")) {
         //   let size = JSON.parse(localStorage.getItem("size"));
@@ -67,11 +84,48 @@ const ModalExample = (props) => {
         // }
     };
 
+    const [modalin, setModalin] = useState(false);
+    const togglein = () => setModalin(!modalin);
+
+
+
+
+    //fast-order-form
+    const [formdata, setFormdata] = useState({
+        data: {},
+        name: '',
+        phone: ''
+    })
+    const onSubmit = async e => {
+        e.preventDefault()
+        setFormdata({
+            ...formdata,
+            data: currentColor
+        })
+        try {
+           await axios.post(API_PATH + 'api/OrderAndOrderDetailsJson/', formdata, {Headers:{ 'Content-Type': 'applicatio' +
+                       'n/json' }})
+            toast("Ваш заказ оформлен!")
+
+        } catch (e) {
+            console.log(e)
+        }
+
+
+    }
+
+    const onSubmitHandler = e => {
+        setFormdata({
+            ...formdata,
+            [e.target.name]: e.target.value
+        })
+    }
+
     return (
         <div>
             <Button color="white" onClick={toggle}>
                 {buttonLabel}
-                {props.id}
+                <span style={{opacity: 0}}>{props.id}</span>
             </Button>
             <Modal isOpen={modal} toggle={toggle} className={className}>
                 <ModalBody>
@@ -116,10 +170,10 @@ const ModalExample = (props) => {
                                 <div className="column-3">
                                     <div className="column-3-header">
                     <span className="d-flex">
-                      <h1>{data1.price} сумм</h1>&nbsp;
-                        <del>{data1.oldprice} сумм</del>
+                      <h1>{data1.colors[0].price} сумм</h1>&nbsp;
+                        <del>{data1.colors[0].oldprice} сумм</del>
                     </span>
-                                        <h5>Цвет: {color}</h5>
+                                        <h5>Цвет: {color ? color : data1.colors[0].color}</h5>
                                         <div className="colors">
                                             {data1.colors.map((color, index) => (
                                                 <div className="colors-field">
@@ -145,24 +199,62 @@ const ModalExample = (props) => {
                                                     ? currentColor.size
                                                     : data1.colors[0].size
                                             ).map((item) => (
-                                                <div
+                                                <button
                                                     className="sizes-size"
                                                     onClick={(e) => addSize(e, item.size, data1.id)}
                                                 >
                                                     <span className="size-title">{item.size}</span>
                                                     <span className="size-sub">{item.quantity}</span>
-                                                </div>
+                                                </button>
                                             ))}
                                         </div>
 
                                         <div className="buttons">
-                                            <button
-                                                className="to-basket"
-                                                onClick={(e) => addBasket(e, data1)}
-                                            >
-                                                Добавить в корзину
-                                            </button>
-                                            <button className="fast-order">Быстрый заказ</button>
+                                            {changing ? (
+                                                <Link
+                                                    to="/korzina"
+                                                    className="to-basket"
+                                                    style={{
+                                                        textDecoration: "none",
+                                                        color: "#fff",
+                                                    }}
+                                                >
+                                                    Перейти в корзину
+                                                </Link>
+                                            ) : (
+                                                <span
+                                                    className="to-basket"
+                                                    onClick={(e) => addBasket(e, data1)}
+                                                >
+                          Добавить в корзину
+                        </span>
+                                            )}
+
+                                            {/*<button >Быстрый заказ</button>*/}
+                                            <Button className="fast-order" onClick={togglein}>
+                                                Быстрый заказ
+                                            </Button>
+                                            <div>
+                                                <img className="w-100" src={API_PATH + data1.brandimage} alt=""/>
+                                            </div>
+                                            <Modal isOpen={modalin} toggle={togglein} className={'fast-order-back'}>
+                                                <div className="btn-close ms-auto me-4 mt-4" onClick={togglein}></div>
+                                                <ModalBody className={'fast-order-mod'}>
+                                                    <form className={'fast-order-form'} onSubmit={e => onSubmit(e)}>
+                                                        <div className="field">
+                                                            <label htmlFor="name">Имя клиента</label>
+                                                            <input value={formdata.name} onChange={e => onSubmitHandler(e)} type="text" placeholder={'Имя...'} className={'input'} name={'name'} id={'name'}/>
+                                                        </div>
+                                                        <div className="field">
+                                                            <label htmlFor="number">Номер для обратного звонка</label>
+                                                            <input value={formdata.phone} name="phone" onChange={e => onSubmitHandler(e)} type="number" placeholder={'Телефон номер...'} className={'input'}/>
+                                                        </div>
+                                                        <div className="field">
+                                                            <button type={'submit'} className={'button'}>Отправить</button>
+                                                        </div>
+                                                    </form>
+                                                </ModalBody>
+                                            </Modal>
                                         </div>
                                     </div>
                                 </div>

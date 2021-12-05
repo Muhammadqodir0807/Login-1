@@ -10,16 +10,13 @@ import data from "bootstrap/js/src/dom/data";
 import Back from "../Back";
 
 
+
 const CardsMain = (props) => {
 
     useEffect(() => {
         props.getCard();
     }, [])
 
-    // const [data, setData] = useState([])
-    // axios.get(API_PATH + "api/XitProducts/")
-    //       // .then(res =>console.log(res))
-    //      .then(res => setData (res.data.products))
 
 
     return (
@@ -29,11 +26,7 @@ const CardsMain = (props) => {
 
 
                 {
-                    props.cards.map((data,index) => (
-
-                        // console.log(data),
-                        // console.log("data")
-
+                    props.cards &&  props.cards.splice(1,6).map((data,index) => (
 
                         <div  className="incards text-decoration-none" key={index}>
 
@@ -55,23 +48,14 @@ const CardsMain = (props) => {
                                             <div className="position-relative mb-2">
 
                                                 <img className='w-100' src={API_PATH + data.colors[0].image[0].image} alt=""/>
-                                                <span className='pink'>{data.discounts} % </span>
+                                                <span className='pink'>{data.colors[0].discount} % </span>
                                             </div>
                                             <div>
 
-                                                <h4 className='size'>{data.price} sum <span
-                                                    className='old'>{data.oldprice} sum</span>
+                                                <h4 className='size'>{data.colors[0].price} sum <span
+                                                    className='old'>{data.colors[0].oldprice} sum</span>
                                                 </h4>
-                                                <div className="d-flex click">
-                                                    <h6>69 626 sum</h6>
-                                                    <div className="d-flex justify-content-between">
-                                                        <span className="mir"><p>vbhhjefvdsfregth</p></span>
-                                                        <span className="pay "><p>svfefdvdfas </p></span>
-                                                        <span className="sbp "><p>dvsefdffggf</p></span>
 
-                                                    </div>
-
-                                                </div>
                                                 <div className="pword">
                                                     <p className='pwordp w-auto'>{data.brand}/ {data.product}</p>
 

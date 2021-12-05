@@ -1,6 +1,7 @@
 import {SET_PARTS} from "../types/menusTypes";
 import axios from "axios";
 import {API_PATH} from "../../tools/constans";
+import {setState} from "./cardsAction";
 
 
 
@@ -12,30 +13,6 @@ export function inform (data) {
 }
 
 
-export const getCarousel = () => (dispatch,getState) => {
-    axios.get(API_PATH + "api/ShoppingDayForHomePageCarousel/")
-        .then((res) => {
-            dispatch(inform({slide:res.data}))
-        })
-}
-
-
-export const getCarouselId = (id, history) => {
-    // console.log(id)
-    // console.log("id,history")
-    return function (dispatch,getState) {
-        axios.get(API_PATH + "api/ShoppingDayProducts/ " + id)
-            .then((res) => {
-                dispatch(inform({slideId:res.data}))
-                // history.push("/twooo")
-            })
-    }
-}
-
-
-
-
-
 export const getParts = () =>  (dispatch,getState) => {
      axios.get(API_PATH +"api/MainPagePromoForHomePage/" )
         .then((res) => {
@@ -44,10 +21,10 @@ export const getParts = () =>  (dispatch,getState) => {
 }
 
 
-export const getPartsId = (brand, history) => {
-    console.log('brand', brand)
+export const getPartsId = (id, history) => {
+
    return function(dispatch, getState) {
-       axios.get(API_PATH +"api/ProductsByBrandId/" + brand )
+       axios.get(API_PATH +"api/MainPagePromoForHomePageProducts/" + id )
 
            .then((res) => {
                dispatch(inform({partscard:res.data}))
@@ -57,9 +34,33 @@ export const getPartsId = (brand, history) => {
 }
 
 
+
+export const getCardBack = (id ,history) => {
+    return function (dispatch,getState) {
+        axios.get(API_PATH + "/api/ProductInfo/" +id)
+            .then((res) => {
+                dispatch(setState({back:res.data.data}))
+                // history.push("/three")
+            })
+    }
+}
+
+
 export const getPartsB = () =>  (dispatch,getState) => {
     axios.get(API_PATH +"api/MainPagePromoForHomePageSlider/" )
         .then((res) => {
             dispatch(inform({partsB:res.data}))
         })
+}
+
+export const getPartsIdss = (id, history) => {
+    console.log('brand', id)
+    return function(dispatch, getState) {
+        axios.get(API_PATH +"api/MainPagePromoForHomePageSliderProducts/" + id )
+
+            .then((res) => {
+                dispatch(inform({partscard:res.data}))
+                history.push("/two")
+            })
+    }
 }

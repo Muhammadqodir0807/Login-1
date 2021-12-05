@@ -4,13 +4,13 @@ import ModalExample from "./Data";
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import {setBurger,getBurger,getBurgerId} from "../redux/action/burgerAction";
+import {inform,getCardBack} from "../redux/action/mainPartsAction";
+
 import {API_PATH} from "../tools/constans";
 import Back from "./Back";
 
 
 const Cards3 = (props) => {
-
-    console.log('brand',props)
 
     useEffect(() => {
         props.getBurger();
@@ -22,7 +22,7 @@ const Cards3 = (props) => {
         <div
             className="row cards mt-5">
 
-            {props.imageId.map((data, index) => (
+            {props.imageId && props.imageId.map((data, index) => (
                 <div className="text-decoration-none twocards col-lg-3 col-md-3 col-sm-6 col-xs-6 mb-5 ">
                     <div  className='kategoriya'>
 
@@ -30,7 +30,7 @@ const Cards3 = (props) => {
                             <div className="prosmotr">
                                 <ModalExample id={data.id}/>
                             </div>
-                            <Link to={"/three"}  className="out">
+                            <Link to={"/three"}  onClick={() => props.getCardBack(data.id , props.history) } className="out">
 
                                 <div className="foot">
                                     <div className="example"></div>
@@ -43,11 +43,11 @@ const Cards3 = (props) => {
                             <div>
                                 <div className="imgback">
                                     <img className='w-100' src={API_PATH + data.colors[0].image[0].image} alt=""/>
-                                    <span className='pink'>{data.discounts} % </span>
+                                    <span className='pink'>{data.colors[0].discount} % </span>
                                 </div>
                                 <div>
-                                    <h4 className='size'>{data.price} sum
-                                        <span className='old'>{data.oldprice} sum</span>
+                                    <h4 className='size'>{data.colors[0].price} sum
+                                        <span className='old'>{data.colors[0].oldprice} sum</span>
                                         {/*<span className='pink'>{item.small}</span>*/}
                                     </h4>
                                     <div className="pword">
@@ -86,4 +86,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps,{setBurger,getBurger,getBurgerId})(Cards3);
+export default connect(mapStateToProps,{setBurger,getBurger,getBurgerId,inform,getCardBack})(Cards3);

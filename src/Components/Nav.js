@@ -6,20 +6,78 @@ import ModalExample from "./Data";
 import axios from "axios";
 import {API_PATH} from "../tools/constans";
 import {connect} from "react-redux";
-import {setBurger,getBurger,getBurgerId} from "../redux/action/burgerAction";
+import {setBurger,getBurger,getBurgerId,onSubmit} from "../redux/action/burgerAction";
+import CardBurger from "./CardBurger";
+import {Input} from "semantic-ui-react";
+import FilterCards from "./FilterCards";
+import data from "bootstrap/js/src/dom/data";
 
 const Navbar = (props) => {
 
     useEffect(() => {
         props.getBurger();
-     props.getBurgerId();
+
     },[])
 
 
+    const [APIData, setAPIData] = useState([])
+    const [filteredResults, setFilteredResults] = useState([]);
+    const [inputValue, setInputValue] = useState('')
+    useEffect(() => {
+        axios.get(API_PATH + "api/ProductInfo/")
+            .then((response) => {
+                setAPIData(response.data.data);
+            })
+    }, [])
 
+    // useEffect(() => {
+    //     const pro = APIData.map(item => console.log(item))
+    //     // console.log(pro)
+    // }, [])
+
+    // axios.post(API_PATH + "api/ProductInfo/" + searchItems())
+
+    const searchItems = (e) => {
+        setInputValue(e.target.value)
+        const allBrands = APIData.filter(item => e.target.value.toLowerCase() === item.brand.toLowerCase())
+        // const allBrands = APIData.map(item => {
+        //     if(item.brand.toLowerCase().includes(e.target.value)) {
+        //         return item.brand
+        //     }
+        // })
+        console.log(allBrands)
+        setFilteredResults(allBrands)
+    }
+
+    const [formdata, setFormdata] = useState({
+        name: '',
+    })
+
+    // const onSubmit = async (e) => {
+    //     e.preventDefault()
+    //     try{
+    //         const data = await axios.get(API_PATH + 'api/SearchProducts/' + input)
+    //         console.log(data)
+    //     } catch (e) {
+    //         console.log(e)
+    //     }
+    // }
+
+
+
+    const [input, setInput] = useState('')
+
+    const inputHandler = e => {
+        setInput(e.target.value)
+    }
+    // {Headers:'Content-Type':'applicatio' + 'n/json'}
         return (
             <div className="nav-box">
+
+
+
                 <div className="navbar">
+
                     <div className="first-div d-flex justify-content-between w-100 ">
 
                         <ul>
@@ -29,29 +87,31 @@ const Navbar = (props) => {
                             </li>
 
                             <li>
+
                                 <a href="#">
                                     Бесплатная доставка
                                 </a>
                             </li>
+                            {/*<li>*/}
+                            {/*    <a className="navbar-one-button" href="#">*/}
+                            {/*        Продавайте на Alsafia*/}
+                            {/*    </a>*/}
+                            {/*</li>*/}
                             <li>
-                                <a className="navbar-one-button" href="#">
-                                    Продавайте на Alsafia
-                                </a>
-                            </li>
-                            <li>
-                                <a className="navbar-one-button" href="#">
+                                <a className="navbar-one-button" href="https://alsafia-cpa.uz/">
                                     Стать партнёром Alsafia
                                 </a>
                             </li>
                         </ul>
                         <ul className="d-flex justify-content-end  ">
                             <li>
-                                <a className="navbar-two-button" href="#">
+                                <a className="navbar-two-button" href="https://t.me/Manager_saisolo/">
                                     Сообщить о проблеме
                                 </a>
                             </li>
                         </ul>
                     </div>
+
                     <div className="second-div">
                         <div className="for-img-one">
                             <a href="#" id="toggler1">
@@ -61,53 +121,58 @@ const Navbar = (props) => {
                             <UncontrolledCollapse className="left" toggler="#toggler1">
                                 <div className="kategory">
                                     <div>
+
                                         {props.menus.map((item, index) => {
                                             // name-table d-flex
                                             return (
-                                                <div key={item.id} className='name mt-4'>
+                                                <div key={index} className='name mt-4'>
                                                     {/*{`name-tabler d-flex ${props.show? "show" : ""}`} onMouseEnter={() => props.setBurger({show: ! props.show})}*/}
                                                     <div className="name-tabler">
-                                                    <Link to={"/burger"} onClick={() => props.getBurgerId(item.id)} className="name-table d-flex" >
+                                                    <Link to={"/categorypage"} onClick={() => props.getBurgerId(item.id,props.history)} className="name-table d-flex" >
                                                         <img className='user me-2' src={item.image} alt=""/>
                                                         <h4>{item.categoryname}</h4>
                                                     </Link>
 
-                                                    <div className="right-part" >
+
+
+                                                    <div className="right-part d-none" >
                                                         <div className="inside">
                                                       <div className="row">
+
                                                           {
                                                               item.subcategories.map((item1) => {
-                                                                  return(
+                                                                  if(item.subcategories.length > 0){return(
                                                                     <div className="col-6">
-                                                                        <h5>{item1.subcategory_name}</h5>
+                                                                        <h5>{item1.subcategoryname}</h5>
                                                                         {
                                                                             item1.subsubcategories.map((item2) => {
                                                                                 return(
-                                                                                    <div><h6>{item2.subsubcategory_name}</h6></div>
+                                                                                    <div><h6>{item2.subsubcategoryname}</h6></div>
                                                                                 )
                                                                             })
                                                                         }
                                                                     </div>
-                                                                  )
+                                                                  )}
                                                                   }
 
                                                               )
                                                           }
+
                                                       </div>
 
 
                                                                 {
                                                                     item.alladvertisements.map((item3) => {
+                                                                        if(item.alladvertisements.length > 0){
                                                                         return(
                                                                             <div className="foto">
                                                                                 <div className="foot-in">
                                                                                 <img src={API_PATH + item3.image} alt=""/>
                                                                             </div>
                                                                             </div>
-                                                                        )
+                                                                        )}
                                                                     })
                                                                 }
-                                                                {/*<img src={API_PATH + item.alladvertisements[0].image} alt=""/>*/}
 
                                                         </div>
                                                     </div>
@@ -125,7 +190,7 @@ const Navbar = (props) => {
 
 
 
-                                <div className="close" id="toggler1">X</div>
+                                <div className="close" id="toggler1" >X</div>
                             </UncontrolledCollapse>
 
                         </div>
@@ -134,35 +199,99 @@ const Navbar = (props) => {
                                 <img src="https://alsafia.uz/img/logotip.png" alt=""/>
                             </Link>
                         </div>
-                        <div className="for-input ">
-                            <input type="text" placeholder="Я ищу..."/>
+                        <div className="for-input">
+                            {/*<input value={input} onChange={e=>inputHandler(e)} type="text"/>*/}
+                            <input value={input} onChange={e=>inputHandler(e)} type="text" placeholder="Я ищу..."/>
+                            <Link to={'/filt'} className={'search fas fa-search'} onClick={(e) => props.onSubmit(input)}>
+                                Search...
+                            </Link>
+                            {/*<i onClick={e => onSubmit(e)} className={'fas fa-search search'}></i>*/}
+
+
+
+
+                            {/*{inputValue && <div  className="filter"  >*/}
+
+
+
+
+                            {/*    {*/}
+                            {/*          filteredResults.map((items) => {*/}
+                            {/*            console.log(items)*/}
+                            {/*            return(*/}
+
+                            {/*                <div>*/}
+                            {/*                    <h4 onClick={e => onSubmit(e,items)}>{items && items.productname}</h4>*/}
+
+                            {/*                </div>*/}
+
+                            {/*            )*/}
+                            {/*        }  )*/}
+
+                            {/*    }*/}
+                            {/*</div>}*/}
+
                         </div>
                         <div className="second-left-side">
+                            {localStorage.getItem("token") ? (
+                                <div className="d-flex">
+                                <div className="first-qism">
+                                    <a href="#">
+                                        <Link to={"/menus"} className="ras2">
+                                            <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/ffffff/external-user-interface-kiranshastry-solid-kiranshastry-1.png" />
+                                            <br />
+                                            <a href="#">Ползователь</a>
+                                        </Link>
+                                    </a>
 
-                            <div className="first-qism">
-                                <a href="#">
+                                </div>
 
-                                    <Link to={"/enter"} className="ras2">
 
-                                        <img
-                                            src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/ffffff/external-user-interface-kiranshastry-solid-kiranshastry-1.png"/>
-                                        <br/>
-                                        <a href="#">Войти</a>
-                                    </Link>
-                                </a>
+                                    <div className="first-qism">
+                                        <a href="#">
+                                            <Link to={"/korzina"} className="ras3">
+                                                <img src="https://img.icons8.com/ios-filled/50/ffffff/click-and-collect.png" />
+                                                <br />
+                                                <a href="#">Корзина</a>
+                                            </Link>
+                                        </a>
+                                    </div>
 
-                            </div>
-                            <div className="first-qism">
-                                <a href="#">
-                                    <Link to={"/korzina"} className="ras3">
+                                </div>
 
-                                        <img src="https://img.icons8.com/ios-filled/50/ffffff/click-and-collect.png"/>
-                                        <br/>
-                                        <a href="#">Корзина</a>
-                                    </Link>
-                                </a>
+                            ) : (
+                                <div className="d-flex">
+                                    <div className="first-qism">
+                                        <a href="#">
+                                            <Link to={"/login"} className="ras2">
+                                                <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/ffffff/external-user-interface-kiranshastry-solid-kiranshastry-1.png" />
+                                                <br />
+                                                <a href="#">Войти</a>
+                                            </Link>
+                                        </a>
+                                    </div>
 
-                            </div>
+                                    <div className="first-qism">
+                                        <a href="#">
+                                            <Link to={"/enter"} className="ras2">
+                                                <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/ffffff/external-user-interface-kiranshastry-solid-kiranshastry-1.png" />
+                                                <br />
+                                                <a href="#">Регистрация</a>
+                                            </Link>
+                                        </a>
+                                    </div>
+
+                                    <div className="first-qism">
+                                        <a href="#">
+                                            <Link to={"/korzina"} className="ras3">
+                                                <img src="https://img.icons8.com/ios-filled/50/ffffff/click-and-collect.png" />
+                                                <br />
+                                                <a href="#">Корзина</a>
+                                            </Link>
+                                        </a>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                     <div className="oval"></div>
@@ -175,9 +304,10 @@ const Navbar = (props) => {
 const mapStateToProps = (state) => {
     return{
         menus:state.burger.menus,
-        show:state.burger.show,
+        menusId:state.burger.menusId,
+        show:state.burger.show
     }
 }
 
 
-export default connect(mapStateToProps,{setBurger,getBurger,getBurgerId})(Navbar);
+export default connect(mapStateToProps,{setBurger,getBurger,getBurgerId,onSubmit})(Navbar);

@@ -1,4 +1,3 @@
-
 import React, {Component, useEffect, useState} from 'react';
 import {UncontrolledCollapse, CardBody, Card, Form, FormGroup, Label, Input,} from 'reactstrap';
 import axios from "axios";
@@ -7,23 +6,22 @@ import Back from "./Back";
 import Footer from "./Footer";
 import Cards from "./Cards";
 import {API_PATH} from "../tools/constans";
-import {getBurgerId} from "../redux/action/burgerAction";
+
 import {connect} from "react-redux";
-import CardBurger from "./CardBurger";
-import Navbar from "./Nav";
+import FilterCards from "./FilterCards";
+import Nav from "./Nav";
 
 
-const Main = (props) => {
+const MainFilter = (props) => {
 
-    useEffect(() => {
-        props.getBurgerId();
-    },[])
+
 
 
     return (
+
         <div>
 
-            <Navbar/>
+            <Nav/>
 
         <div className="row main me-0">
 
@@ -191,7 +189,7 @@ const Main = (props) => {
             {/*    </div>*/}
             {/*</div>*/}
 
-            <div className="col-12">
+            <div className="col-lg-9 col-md-12">
                 <div className="man">
                     {/*<div className='menu'><p>81 товар</p></div>*/}
                     {/*<div className="menu">*/}
@@ -203,8 +201,7 @@ const Main = (props) => {
                     {/*    <h6> Обновлению</h6>*/}
                     {/*</div>*/}
 
-
-                    <CardBurger/>
+                    <FilterCards/>
 
                     {/*<div className="texnika">*/}
                     {/*    <div><h1>С этими товарами ищут</h1></div>*/}
@@ -249,14 +246,15 @@ const Main = (props) => {
         </div>
 
             <Footer/>
+
         </div>
     );
 }
 
 const mapStateToProps = (state) => {
-    return{
-        menus:state.burger.menus,
+    return {
+        partsId: state.partM.partsId,
     }
 }
 
-export default connect(mapStateToProps,{getBurgerId}) (Main);
+export default connect(mapStateToProps, null)(MainFilter);

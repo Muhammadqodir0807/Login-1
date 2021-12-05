@@ -2,12 +2,11 @@
 import {SET_PARTS} from "../types/menusTypes";
 
 const initialState = {
-    slide:[],
-    slideId:[],
     parts:[],
     partscard:[],
     partsB:[],
     partscardB:[],
+    back:[],
     partsId:"",
 }
 

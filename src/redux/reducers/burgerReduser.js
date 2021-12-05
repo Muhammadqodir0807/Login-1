@@ -4,7 +4,9 @@ import {SET_BURGER} from "../types/menusTypes";
 const initialState = {
     menus:[],
     show:false,
-    menusId:[]
+    menusId:[],
+    search:[],
+    filter:[]
 }
 
 export const burgerReduser = (state = initialState,action) => {
